@@ -27,11 +27,12 @@ en la carpeta "model", se representan las entidades y la lógica de negocio de l
 
 Estructura:
 >S.C.V
-    >|--config
-    >|--public
+    >|-Config
+    >|-Public
         >|--style
         >|--img
         >|--js
-    >|--controller
-    >|--model
-    >|--view
+    >|-Controller
+    >|-Model
+    >|-View
+ 
