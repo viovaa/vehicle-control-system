@@ -40,3 +40,10 @@ Estructura:
     >|-View
     >|-Assets
  
+
+ conexión base de datos:
+ host: brjik1b36zc7qp6q75zj-mysql.services.clever-cloud.com
+ database name: brjik1b36zc7qp6q75zj
+ user: u5rcz0uiqb85s0bh
+ password: qqeXUHy8yc3nXgVhe6JS
+ port: 3306
