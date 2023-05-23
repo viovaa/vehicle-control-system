@@ -11,7 +11,7 @@ Jorge Paredes Vargas - JorgeParedesV
 Sebastian Cid Villa - Enroke1
 
 Organización del proyecto
-El proyecto se encuentra dividido en cinco carpetas principales:
+El proyecto se encuentra dividido en 6 carpetas principales:
 
 en la carpeta "config". se encuentran los archivos de configuración de la aplicación. Estos archivos pueden contener información sobre la conexión a la base de datos, configuraciones de enrutamiento, configuraciones de seguridad y otros ajustes relevantes para el funcionamiento de la aplicación.
 
@@ -21,6 +21,9 @@ en la carpeta "controller", se encarga de manejar las solicitudes del usuario y 
 
 en la carpeta "view", se encarga en la presentación de los datos al usuario. 
 en la carpeta "model", se representan las entidades y la lógica de negocio de la aplicación.
+
+en la carpeta "assets" se encuentran los archivos correspondientes al diseño, imagenes... de las vistas del usuario "view".
+
 
 !importante: en el archivo index.php ubicado en la carpeta raiz del protecto se define el enrutamiento inicial, donde se inicia el procesamiento de la solicitud del cliente.
 
@@ -35,4 +38,5 @@ Estructura:
     >|-Controller
     >|-Model
     >|-View
+    >|-Assets
  
