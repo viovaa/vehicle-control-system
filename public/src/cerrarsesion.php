@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include('../../config/validaciones.php');
-$mensaje = "No se encontro una cuenta asociada a $hola";
+$email = $_POST['email'];
+$mensaje = "No se encontro una cuenta asociada a $email";
 echo "<script>alert('$mensaje');</script>";
 
 ?>
