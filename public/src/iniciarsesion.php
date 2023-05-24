@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    # variable superglobal desarrollador
+    $_SESSION["Grupo_de_desarrollo"] = "nullsoftware";
+    
+    # inicia los intentos
+    if (!isset($_SESSION["intentos"])) $_SESSION["intentos"] = 0;
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +18,11 @@
     <link rel="shortcut icon" href="../img/favicon-scv.png" type="image/x-icon">
 </head>
 <body>
+
+    <!--iniciar sesion-->
+    <form action="../config/validaciones.php" method="post">
+
+    </form>
     
 </body>
 </html>
