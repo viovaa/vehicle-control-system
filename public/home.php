@@ -2,7 +2,7 @@
     session_start();
     #$email = $_POST['email']; ######
     //Se muestra un alert si se haya redirigido a home.php desde cerrarsesion.php
-    if ($_SESSION['redireccion_desde_cerrarsesion.php'] == true) {
+    if (isset($_SESSION['redireccion_desde_cerrarsesion.php']) == true) {
         echo '<script>alert("Redireccionado desde cerrarsesion.php");</script>';
         // Restablecer la variable de sesión para futuras redirecciones
         $_SESSION['redireccion_desde_cerrarsesion.php'] = false;
@@ -16,11 +16,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sistema de control de vehículos</title>
     <link rel="shortcut icon" href="./img/favicon-scv.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body> 
-    <h3>hi hi hi</h3>
-    
+<body>
+    <?php include 'src/menu.php'; ?>
+
+    <div>
+        <?php
+            if (isset($_GET['page'])) {
+                $page = $_GET['page'];
+
+                if ($page === 'acercade') {
+                    include 'src/acercade.php';
+                } elseif ($page === 'sugerencias') {
+                    include 'src/sugerencias.php';
+                } elseif ($page === 'contacto') {
+                    include 'src/contacto.php';
+                } elseif ($page === 'iniciarsesion') {
+                    include 'src/iniciarsesion.php';
+                } elseif ($page === 'oficial1') {
+                    include 'src/oficial1.php';
+                }
+            }
+        ?>
+    </div>
+
 </body>
 </html>
 
-<!--  la página ./src/iniciarsecion.php ya esta creada, solo tienes que hacer un hipervinculo>

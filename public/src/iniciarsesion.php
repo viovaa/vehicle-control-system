@@ -16,6 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iniciar seción</title>
     <link rel="shortcut icon" href="../img/favicon-scv.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 <body>
 
@@ -29,17 +31,28 @@
             header("location: src/cerrarSesion.php");
         }
     ?>
-    <!-- correo -->
-    <label for="email"><img src="../img/correo.png" alt="email"></label><br>
-    <input required type="email" name="email" id="email" placeholder="ingrese su correo">
-    <br><br>
-    <!-- contraseña -->
-    <label for="password"><img src="../img/contraseña.png" alt="password"></label><br>
-    <input required type="password" name="password" id="password" placeholder="ingrese su contraseña">
-    <br><br>
-    <input type="submit" value="ingresar">
+    <div class="login-container">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Inicio de Sesión</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="email" alt="email">Correo:</label>
+                        <input required type="email" name="email" id="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" alt="password">Contraseña:</label>
+                        <input required type="password" name="password" class="form-control" id="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-    </form>
-    
+    <a href="../../public/home.php" class="btn btn-secondary btn-regresar">Regresar</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>        
 </body>
 </html>
