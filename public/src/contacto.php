@@ -3,6 +3,7 @@
 <head>
   <title>Formulario de Contacto</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="shortcut icon" href="./img/favicon-scv.png" type="image/x-icon">
 
 </head>
 <body>
