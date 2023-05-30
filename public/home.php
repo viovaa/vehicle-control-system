@@ -1,12 +1,15 @@
 <?php
+    /*
     session_start();
     #$email = $_POST['email']; ######
     //Se muestra un alert si se haya redirigido a home.php desde cerrarsesion.php
     if (isset($_SESSION['redireccion_desde_cerrarsesion.php']) == true) {
+        $_SESSION['redireccion_desde_cerrarsesion.php'] = false;
         echo '<script>alert("Redireccionado desde cerrarsesion.php");</script>';
         // Restablecer la variable de sesión para futuras redirecciones
-        $_SESSION['redireccion_desde_cerrarsesion.php'] = false;
+        
     }
+    */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +44,6 @@
             }
         ?>
     </div>
-
 </body>
 </html>
 
