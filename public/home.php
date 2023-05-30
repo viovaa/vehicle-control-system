@@ -35,8 +35,6 @@
                     include 'src/contacto.php';
                 } elseif ($page === 'iniciarsesion') {
                     include 'src/iniciarsesion.php';
-                } elseif ($page === 'oficial1') {
-                    include 'src/oficial1.php';
                 }
             }
         ?>
