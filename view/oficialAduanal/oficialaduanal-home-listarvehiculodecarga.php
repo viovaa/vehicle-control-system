@@ -1,4 +1,5 @@
 <?php
+/*
     session_start();
     $patente = $_POST['patente'];
     $marca = $_POST['marca'];
@@ -14,7 +15,7 @@
     $tipovehiculo = $_POST['tipovehiculo'];
     $fecha = date("Y-m-d");
     $boton = '<button class="btn btn-primary" type="button"><a href="./oficialaduanal-seleccionarvehiculodecarga.php">detalle</a> </button>';
-
+*/
 ?>
 <!doctype html>
 <html lang="en">
@@ -48,10 +49,7 @@
                 <h3>Agente aduanal - "usuario</h3>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">cuenta</a>
+                <a class="nav-link" href="./oficialaduana-cuenta.php">cuenta</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../../public/src/cerrarsesion.php">teminar sesión</a>
@@ -74,6 +72,7 @@
         </thead>
         <tbody>
         <?php
+        /*
           echo "<tr>";
               echo "<td scope='row'>" . $fecha . "</td>";
               echo "<td scope='row'>" . $tipovehiculo . "</td>";
@@ -83,7 +82,7 @@
               echo "<td scope='row'>" . $tipoCarga . "</td>";
               echo "<td scope='row'>" . $boton .  "</td>";
               echo "<td scope='row'> nada </td>";
-          echo "</tr>";
+          echo "</tr>";*/
         ?>
 
 

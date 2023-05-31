@@ -56,17 +56,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                
-            <td><?php echo $fecha; ?></td>
-            <td><?php echo $marca; ?></td>
-            <td><?php echo $modelo; ?></td>
-            <td><?php echo $agnovehiculo; ?></td>
-            <td><?php echo $patente; ?></td>
-            <td><?php echo $nombresConductor . ' ' . $apellidosConductor; ?></td>
-            <td><?php echo $tipoCarga; ?></td>
+            
+             <!--
+            <tr>      
+            <td><?php #echo $fecha; ?></td>
+            <td><?php #echo $marca; ?></td>
+            <td><?php #echo $modelo; ?></td>
+            <td><?php #echo $agnovehiculo; ?></td>
+            <td><?php #echo $patente; ?></td>
+            <td><?php #echo $nombresConductor . ' ' . $apellidosConductor; ?></td>
+            <td><?php #echo $tipoCarga; ?></td>
             <td><button class="btn btn-primary" type="button"><a href="./oficialaduanal-registrarinspecciontecnica.php">técnica</a> </button> </td>
-            </tr>
+            </tr>-->
 
             <tr>
             <td>16-04-2023</td>
