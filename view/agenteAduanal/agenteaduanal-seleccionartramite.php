@@ -34,7 +34,7 @@
           </p>
           <div class="collapse" id="collapseExample1">
             <div class="card" style="width: 18rem;">
-                <img src="src\Suzuki_Vstrom.jpg" class="card-img-top" alt="...">
+                <img src="agenteAduanal\src\Suzuki_Vstrom.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Suzuki Vstrom 650</h5>
                   <p class="card-text">Este vehiculo carga con <b>Productos alimenticios y
@@ -58,7 +58,7 @@
           </p>
           <div class="collapse" id="collapseExample2">
             <div class="card" style="width: 18rem;">
-                <img src="src\Suzuki_Dzire.jpg" class="card-img-top" alt="...">
+                <img src="agenteAduanal\src\Suzuki_Dzire.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Suzuki Dzire</h5>
                   <p class="card-text"><b>Este vehiculo carga con Productos químicos y
@@ -82,7 +82,7 @@
           </p>
           <div class="collapse" id="collapseExample3">
             <div class="card" style="width: 18rem;">
-                <img src="src\Kia_Stinger.jpg" class="card-img-top" alt="...">
+                <img src="agenteAduanal\src\Kia_Stinger.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Kia Stinger</h5>
                   <p class="card-text">Este vehiculo carga con <b>Productos electrónicos</b></p>
@@ -106,7 +106,7 @@
           </p>
           <div class="collapse" id="collapseExample4">
             <div class="card mb-3" style="width: 18rem;">
-                <img src="src\Kia_Sorento.jpg" class="card-img-top" alt="...">
+                <img src="agenteAduanal\src\Kia_Sorento.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Kia Sorento</h5>
                   <p class="card-text"><b>Este vehiculo carga con Carga mixta</b></p>
