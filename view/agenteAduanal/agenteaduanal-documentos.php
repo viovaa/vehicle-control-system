@@ -34,14 +34,20 @@
       <main>
         <div>
           <div class="table-responsive-sm">
-            <table class="table table-success
+            <div class="card text-center">
+              <div class="card-body">
+                <h4 class="card-title">Lista de Tramites de Vehiculos de Carga</h4>
+                <p class="card-text">Aca tenemos los usuarios ingresados en la base de datos</p>
+              </div>
+            </div>
+            <table class="table table-light
             table-striped
+            caption-top
             table-bordered
             table-primary
             align-botton">
               <thead class="table-dark">
-                <caption>lista de trámites de vehículos de carga</caption>
-                <tr>
+                  <caption>Lista de trámites de vehículos de carga</caption>                 <tr>
                   <th>Fecha</th>
                   <th>Tipo de Vehiculo</th>
                   <th>Patente</th>
@@ -52,7 +58,7 @@
                   <th>Estado</th>
                 </tr>
                 </thead>
-                <tbody class="table-group-divider">
+                <tbody class="table-group-divider table-success">
                     <td scope="row">16-04-2023</td>
                     <td>Motocicleta</td>
                     <td>PYI-241</td>
@@ -64,7 +70,7 @@
                     <td><u>detalle</u></td>
                     <td>APROBADO</td>
                   </tr>
-                  <tr class="table-group-divider">
+                  <tr class="table-group-divider table-danger">
                     <td scope="row">16-04-2023</td>
                     <td>Automovil</td>
                     <td>LMD-405</td>
@@ -87,7 +93,7 @@
                     <td><u>detalle</u></td>
                     <td>APROBADO</td>
                   </tr>
-                  <tr class="table-group-divider">
+                  <tr class="table-group-divider table-warning">
                     <td scope="row">17-04-2023</td>
                     <td>Camioneta</td>
                     <td>PTJ-204</td>
@@ -106,6 +112,10 @@
           </div>
           
         </div>
+
+        <div>
+          <a name="button" id="boton" class="btn btn-dark" onclick="redirectToMenu()" role="button">Volver al Menu Principal</a>
+        </div>
     
       </main>
       <footer>
@@ -118,6 +128,12 @@
     
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+      </script>
+
+      <script>
+      function redirectToMenu() {
+      window.location.href = "agenteaduanal-home-listartramitesvehiculodecarga.php";
+    }
       </script>
     </body>
     
