@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    include("../../config/verificar.php");
+    include("../../config/connection.php");
+    $con = connect();
+    $sql = "select * from funcionario;";
+    $query = mysqli_query($con, $sql);
+
+?>
 <!doctype html>
     <html lang="en">
     <head>
@@ -40,64 +50,42 @@
                   <caption>Usuarios</caption>         
                   <th>Fecha de ingreso</th>
                   <th>Rut</th>
-                  <th>Rol</th>
-                  <th>Sanciones</th>
-                  <th>Nombres</th>
-                  <th>Apellidos</th>
-                  <th>Número de contacto</th>
-                  <th>Correo</th>
-                  <th>Acciones</th>
-                  <th>Acciones</th>
+                  <th>nombre</th>
+                  <th>apellido</th>
+                  <th>email</th>
+                  <th>telefono</th>
+                  <th>contraseña</th>
+                  <th>asignación</th>
+                  <th>eliminar</th>
+                  <th>modificar</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>12-05-2020</td>
-                        <td>204359645</td>
-                        <td>Oficial de aduana</td>
-                        <td>0</td>
-                        <td>Martina Gonzáles</td>
-                        <td>Valdés Várgas</td>
-                        <td>930245002</td>
-                        <td>mgonzalesvaldes@gmail.com</td>
-                        <td>
-                          <a href="adiministrador-modificarusuario.php" class="btn btn-primary">Modificar</a>
-                        </td>
-                        <td>
-                          <a href="administrador-eliminarusuario.php" class="btn btn-danger">Eliminar</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>05-06-2020</td>
-                        <td>24563496k</td>
-                        <td>Policia de tráfico</td>
-                        <td>1</td>
-                        <td>Felipe Muñoz</td>
-                        <td>Silva Soto</td>
-                        <td>940343512</td>
-                        <td>felipe.munozs@hotmail.com</td>
-                        <td>
-                          <a href="adiministrador-modificarusuario.php" class="btn btn-primary">Modificar</a>
-                        </td>
-                        <td>
-                          <a href="administrador-eliminarusuario.php" class="btn btn-danger">Eliminar</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>12-01-2022</td>
-                        <td>205032542</td>
-                        <td>Agente aduanal</td>
-                        <td>0</td>
-                        <td>Camila López</td>
-                        <td>Torres Castro</td>
-                        <td>9432540531</td>
-                        <td>camilalopeztorres@yahoo.com</td>
-                        <td>
-                          <a href="adiministrador-modificarusuario.php" class="btn btn-primary">Modificar</a>
-                        </td>
-                        <td>
-                          <a href="administrador-eliminarusuario.php" class="btn btn-danger">Eliminar</a>
-                        </td>
-                    </tr>
+                    <?php
+                      while ($funcionario = mysqli_fetch_assoc($query)) {
+                        $fechaingreso = $funcionario["Edad"];
+                        $rut = $funcionario["Rut"];
+                        $nombre = $funcionario["Nombre"];
+                        $apellido = $funcionario["Apellido"];
+                        $email = $funcionario["Email"];
+                        $telefono = $funcionario["Telefono"];
+                        $password = $funcionario["password"];
+                        $asignacion = $funcionario["Asignacion_ID"];
+                        $eliminar = "<a href='eliminarUsuario.php?correo=$email'><img src='../../public/img/eliminar.png' alt='' width='30px' height='30px'></a>";
+                        $modificar = "<img src='../img/ajustes.png' alt='' width='30px' height='30px' onClick='modificar(" . '"' . $fechaingreso . '", ' . '"' . $rut . '",' . '"' . $nombre . '"' . ")'>";
+                        echo "<tr>";
+                        echo "<td> $fechaingreso </td>";
+                        echo "<td> $rut</td>";
+                        echo "<td> $nombre </td>";
+                        echo "<td> $apellido </td>";
+                        echo "<td> $email </td>";
+                        echo "<td> $telefono </td>";
+                        echo "<td> $password </td>";
+                        echo "<td> $asignacion </td>";
+                        echo "<td> $eliminar  </td>";
+                        echo "<td> $modificar  </td>";
+                        echo "</tr>";
+                      }
+                    ?>
                 </tbody>
                 <tfoot>
                   
@@ -134,3 +122,7 @@
     </body>
 
 </html>
+
+
+
+                    

@@ -35,7 +35,6 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title">Inicio de Sesión</h3>
-                <form>
                     <div class="form-group">
                         <label for="email" alt="email">Correo:</label>
                         <input required type="email" name="email" id="email" class="form-control">
@@ -45,7 +44,6 @@
                         <input required type="password" name="password" class="form-control" id="password">
                     </div>
                     <button type="submit" class="btn btn-primary">Ingresar</button>
-                </form>
             </div>
         </div>
     </div>

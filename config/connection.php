@@ -1,19 +1,26 @@
 <?php
 
 function connect() {
+    $host = 'localhost';
+    $user = 'root';
+    $password = '';
+    $database = 'aduanas';
 
-    #Datos de la conexión
-    $host = 'cs.ilab.cl'; 
-    $user = '2_BD_44'; 
-    $password = '2_BD_44';
-    $database = 'aduanas'; 
+    $connection = mysqli_connect($host, $user, $password);
 
-    #Ingresar datos de la conexión
-    $connection = mysqli_connect($host, $user, $password); 
+    #PRUEBAS
+    // if (!$connection) {
+    //     echo "<script>alert('Error al conectar a la base de datos.');</script>";
+    //     return null;
+    // }else{
+    //     echo "<script>alert('Conexión establecida correctamente.');</script>";
+    // }
 
-    #seleccionar base de datos
-    mysqli_select_db($connection, $database); 
+    mysqli_select_db($connection, $database);
 
-    return $connection; 
+    
 
+    return $connection;
 }
+
+

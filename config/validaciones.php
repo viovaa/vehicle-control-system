@@ -1,65 +1,60 @@
 <?php
     include './connection.php';
-    #se guarda la función 'conectar()' dentro de una variable
     $connection = connect();
 
-
-    #se comienza la conexión
     session_start();
-
-    #se valida la sesion del grupo de desarrollo 
     include 'verificar.php';
-
+        
     $_SESSION["intentos"]++;
 
-    #se recupera información del formulario en '../public/src/iniciarsesion.php'
     $email = $_POST['email'];
     $password = $_POST['password'];
 
 
-    #consultar si existe el usuario asociado con el correo
-    $sql = 'SELECT  CONCAT(nombres, apellidos) AS nombre_completo, rut, password FROM funcionario WHERE email = "$email";';
-    $query = mysqli_query($connection, $sql);
 
-    //se consulta si existe el usuario  en la tabla, y los guarda en una variable
+    $sql = "SELECT CONCAT(Nombre, Apellido) AS nombre_completo, Rut, Asignacion_ID, password FROM Funcionario WHERE Email = '$email';";
+    $query = mysqli_query($connection, $sql);
     if (mysqli_num_rows($query) > 0) {
-        #si existe el usuario, se guarda en la variable '$funcionario'
         $funcionario = mysqli_fetch_assoc($query);
-    
-        if ($password ==$funcionario['password']){
-            //Guardar datos del usuario dentro de una variable  de seción
+
+        #PRUEBAS
+        //echo "Rut: " . $funcionario['Rut'] . "<br>";
+        // $mensaje = "parte 3. Datos del funcionario: Nombre completo: " . $funcionario['nombre_completo'] . ", Rut: " . $funcionario['Rut'] . ", Contraseña: " . $funcionario['password'];
+        // echo "<script>alert('$mensaje'); </script>";
+
+        if ($password == $funcionario['password']) {
             $_SESSION['email'] = $email; 
-            $_SESSION['nombres'] = $funcionario['nombres'];  
-            $_SESSION['apellidos'] = $funcionario['apellidos'];
-            $sql = 'SELECT cargo_idcargo FROM asignacion;';
-            $asignacion = mysqli_fetch_assoc($query);
+            $_SESSION['nombres'] = $funcionario['nombre_completo'];  
+            $sql = "SELECT f.Rut, a.cargo_IDcargo, c.NombreCargo FROM Funcionario f, Asignacion a, Cargo c WHERE f.Asignacion_ID = a.ID and Email = '$email' ;";
+            $query = mysqli_query($connection, $sql);
             
-            #se ingresa a la página correspondiente de cada usuario
-            if($asignacion['cargo_idcargo'] == 1){ //administrador
+            #PRUEBAS
+            // if (mysqli_num_rows($query) > 0) {
+            //     $asignacion = mysqli_fetch_assoc($query);
+            //     echo "Rut: " . $asignacion['Rut'] . "<br>";
+            //     echo "Cargo_ID: " . $asignacion['cargo_IDcargo'] . "<br>";
+            //     echo "Cargo_Nombre: " . $asignacion['NombreCargo'] . "<br>";
+            // }
+
+            if ($asignacion['cargo_IDcargo'] == 'C001') { // administrador
                 header('location: ../view/administrador/administrador-home-listarusuario.php');
-            }
-            elseif($asignacion['cargo_idcargo'] == 1){ //agenteAduanal
+            } elseif ($asignacion['cargo_IDcargo'] == 'C002') { // agenteAduanal
                 header('location: ../view/agenteAduanal/adenteaduanal-home-listartramitesdevehiculodecarga.php');
-            }
-            elseif($asignacion['cargo_idcargo'] == 1){ //oficialAduanal
+            } elseif ($asignacion['cargo_IDcargo'] == 'C003') { // oficialAduanal
                 header('location: ../view/oficialAduanal/oficialaduanal-home-listarvehiculodecarga.php');
-            }
-            elseif($asignacion['cargo_idcargo'] == 1){ //policiadeTrafico
+            } elseif ($asignacion['cargo_IDcargo'] == 'C004') { // policiadeTrafico
                 header('location: ../view/policiadeTrafico/policiadetrafico-home-listarvehiculoparticular.php');
             }
-
-            
-
-        }else{
+        }else {
             $_SESSION['email'] = $email;
             header('location: ../index.php');
         }
-    }
-    else{
-        $mensaje = "No se encontro una cuenta asociada al correo '$email'.";
-        echo "<script>alert('$mensaje'); window.location.href='../index.php';</script>";
-        #header('location: ../index.php');
-    }
-
-
     
+        
+
+    }else {
+        $mensaje = "No se encontró una cuenta asociada al correo '$email'.";
+        echo "<script>alert('$mensaje'); window.location.href='../index.php';</script>";
+    }
+    
+
