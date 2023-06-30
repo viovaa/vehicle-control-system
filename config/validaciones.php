@@ -28,13 +28,14 @@
             $sql = "SELECT f.Rut, a.cargo_IDcargo, c.NombreCargo FROM Funcionario f, Asignacion a, Cargo c WHERE f.Asignacion_ID = a.ID and Email = '$email' ;";
             $query = mysqli_query($connection, $sql);
             
-            #PRUEBAS
-            // if (mysqli_num_rows($query) > 0) {
-            //     $asignacion = mysqli_fetch_assoc($query);
-            //     echo "Rut: " . $asignacion['Rut'] . "<br>";
-            //     echo "Cargo_ID: " . $asignacion['cargo_IDcargo'] . "<br>";
-            //     echo "Cargo_Nombre: " . $asignacion['NombreCargo'] . "<br>";
-            // }
+            if (mysqli_num_rows($query) > 0) {
+                $asignacion = mysqli_fetch_assoc($query);
+
+                #PRUEBAS
+                // echo "Rut: " . $asignacion['Rut'] . "<br>";
+                // echo "Cargo_ID: " . $asignacion['cargo_IDcargo'] . "<br>";
+                // echo "Cargo_Nombre: " . $asignacion['NombreCargo'] . "<br>";
+            }
 
             if ($asignacion['cargo_IDcargo'] == 'C001') { // administrador
                 header('location: ../view/administrador/administrador-home-listarusuario.php');
